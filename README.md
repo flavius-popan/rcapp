@@ -1,21 +1,12 @@
-# Rcapp
+# Recurse Center Application
 
-**TODO: Add description**
+I aspire to spend 12 weeks in Brooklyn making code dreams come true.
 
-## Installation
+## Task
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `rcapp` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:rcapp, "~> 0.1.0"}
-  ]
-end
+### Database server
 ```
+Before your interview, write a program that runs a server that is accessible on http://localhost:4000/. When your server receives a request on http://localhost:4000/set?somekey=somevalue it should store the passed key and value in memory. When it receives a request on http://localhost:4000/get?key=somekey it should return the value stored at somekey.
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/rcapp>.
-
+During your interview, you will pair on saving the data to a file. You can start with simply appending each write to the file, and work on making it more efficient if you have time.
+```
