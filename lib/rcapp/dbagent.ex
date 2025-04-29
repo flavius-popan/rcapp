@@ -1,19 +1,12 @@
 defmodule Dbagent do
   @moduledoc """
-  Provides an in-memory key-value store using Agent.
-
-  This module can be used as the storage backend for a web server
-  that needs to store key-value pairs based on HTTP requests,
-  such as setting a value via `/set?somekey=somevalue` and retrieving
-  it via `/get?key=somekey`.
+  Provides an in-memory key-value store using the OTP Agent Behaviour.
 
   ## Examples
 
-      iex> {:ok, _pid} = Dbagent.start_link(%{})
-      iex> # Simulate storing a value like from /set?somekey=somevalue
+      # FYI: Dbagent is started by the application supervisor when running `mix test`
       iex> Dbagent.set("somekey", "somevalue")
       :ok
-      iex> # Simulate retrieving a value like for /get?key=somekey
       iex> Dbagent.get("somekey")
       "somevalue"
       iex> Dbagent.get("anotherkey")
@@ -26,7 +19,7 @@ defmodule Dbagent do
   end
 
   def get(key) do
-    Agent.get(__MODULE__, &Map.get(&1, key, ":nil"))
+    Agent.get(__MODULE__, &Map.get(&1, key))
   end
 
   def set(key, value) do
