@@ -7,7 +7,7 @@ defmodule Rcapp.Application do
     children = [
       # server
       {Plug.Cowboy, scheme: :http, plug: Rcapp.Dbserver, options: [port: 4000]},
-      # state agent
+      #          v-- sets initial state
       {Dbagent, %{}}
     ]
 

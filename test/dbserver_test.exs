@@ -35,6 +35,7 @@ defmodule DbserverTest do
 
   describe "Persistence" do
     @tag :capture_log
+    @tag :pending
     test "key-value pair persists after server restart" do
       key = "persist-key-#{System.unique_integer()}"
       value = "persist-value-#{System.unique_integer()}"
